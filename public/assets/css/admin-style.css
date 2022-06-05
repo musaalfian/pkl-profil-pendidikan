@@ -5,7 +5,9 @@ footer {
   position: sticky;
   top: 100%;
 }
-
+.fw700 {
+  font-weight: 700 !important;
+}
 /* Toogle responsive */
 #nav-toogle {
   display: none;
@@ -14,9 +16,8 @@ footer {
   width: 0px;
   transition: .3s;
 }
-#nav-toogle:checked + .sidebar__section .sidebar__menu .menu__content i {
-  display: none;
-}
+#nav-toogle:checked + .sidebar__section .sidebar__menu .menu__content path,
+#nav-toogle:checked + .sidebar__section .sidebar__menu .menu__content i,
 #nav-toogle:checked + .sidebar__section .sidebar__menu .menu__content span {
   display: none;
 }
@@ -52,7 +53,7 @@ footer {
   color: black;
 }
 .sidebar__section .sidebar__brand i {
-  color: white;
+  color: white !important;
   font-size: 1.5rem;
 }
 .me__icon {
@@ -70,6 +71,9 @@ footer {
   font-size: 18px;
   color: white;
   font-family: var(--head-font);
+}
+#navAdmin path {
+  color: white;
 }
 
 /* Dropdown data sekolah */
@@ -113,9 +117,9 @@ footer {
   width: 22%;
   transition: width 300ms;
 }
-.main__section img {
+/* .main__section img {
   color: white;
-}
+} */
 .main__section .header {
   height: 5.9rem;
   box-sizing: border-box;
@@ -161,8 +165,41 @@ footer {
 .sd__section thead {
   border-bottom: 1px solid var(--dark-blue);
 }
-.sd__section .alamat {
-  width: 50% !important;
+.sd__section .nama__sekolah {
+  width: 40% !important;
+}
+.tabel__section__admin {
+  box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 5%);
+}
+.tabel__section__admin th {
+  color: var(--grey) !important;
+  font-weight: 600 !important;
+}
+.tabel__section__admin .nomor {
+  width: 0 !important;
+}
+.tabel__section__admin td {
+  padding: 10px 18px !important;
+}
+.tabel__section .nama__pengirim {
+  width: 18% !important;
+}
+.tabel__section__index {
+  box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 5%);
+}
+.tabel__section__index th {
+  color: var(--grey) !important;
+  font-weight: 600 !important;
+}
+#dataSekolahSd_paginate .paginate_button:hover,
+#dataTenagaPendidikSd_paginate .paginate_button:hover, 
+#dataSekolahSmp_paginate .paginate_button:hover, 
+#dataTenagaPendidikSmp_paginate .paginate_button:hover,
+#strukturOrganisasi_paginate .paginate_button:hover,
+#kotakSaran_paginate .paginate_button:hover,
+#jabatan_paginate .paginate_button:hover {
+  color: var(--grey) !important;
+  background: none;
 }
 
 /* Tenaga sd section */
@@ -210,11 +247,18 @@ footer {
 .tabel__tenaga__pendidik th{
   width: unset !important;
 }
-
+#dataSekolahSd_length select,
+#dataTenagaPendidikSd_length select,
+#dataSekolahSmp_length select,
+#dataTenagaPendidikSmp_length select,
+#strukturOrganisasi_length select,
+#jabatan_length select,
+#kotakSaran_length select {
+  margin: 0 8px;
+}
 /* *********************************** */
 /*          DETAIL SEKOLAH             */
 /* *********************************** */
-
 
 /* *********************************** */
 /*           EDIT SEKOLAH              */
@@ -224,13 +268,14 @@ footer {
   border-radius: 0 !important;
 }
 .edit__sekolah__section label {
+  font-weight: 600 !important;
   color: var(--grey);
 }
 .edit__sekolah__section input::placeholder{
   color: lightslategray;
 }
-.edit__sekolah__section input {
-  color: lightslategray;
+.edit__sekolah__section input, select {
+  color: black !important;
 }
 
 /* *********************************** */
@@ -239,11 +284,35 @@ footer {
 .edit__sekolah__section option {
   color: var(--grey) !important;
 }
-
+.sidebar__section .active path {
+  color: white;
+}
+.sidebar__section .menu__content:hover .active path {
+  color: black;
+}
 /* *********************************** */
 /*       STRUKTUR ORGANISASI           */
 /* *********************************** */
+.struktur__organisasi__section .nomor {
+  width: 0 !important;
+}
+.struktur__organisasi__section textarea {
+  min-height: 13.2rem;
+}
+.struktur__organisasi__section label {
+  font-weight: 600 !important;
+  color: var(--grey) !important;
+}
 
+/* *********************************** */
+/*              JABATAN                */
+/* *********************************** */
+.struktur__organisasi__section .nama__jabatan {
+  width: 32% !important;
+}
+.struktur__organisasi__section .aksi {
+  width: 10% !important;
+}
 
 /* *********************************** */
 /*          LOGIN SECTION              */

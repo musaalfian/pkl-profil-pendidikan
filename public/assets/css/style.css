@@ -80,14 +80,26 @@
 .ff2 {
     font-family: var(--body-font);
 }
+.fsbig {
+    font-size: 10rem !important;
+}
+.fs24 {
+    font-size: 24px;
+}
+.fs20 {
+    font-size: 20px !important;
+}
 .fs18 {
-    font-size: 18px;
+    font-size: 18px !important;
+}
+.fs16 {
+    font-size: 16px !important;
 }
 .fs14 {
-    font-size: 14px;
+    font-size: 14px !important;
 }
 .fs12 {
-    font-size: 12px;
+    font-size: 12px !important;
 }
 h1 {
     font-size: 32px;
@@ -201,6 +213,17 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 0 !important;
 }
 
+#userDataSekolahSd_paginate .paginate_button:hover,
+#userDataSekolahSmp_paginate .paginate_button:hover, 
+#userDataTenagaPendidikSmp_paginate .paginate_button:hover, 
+#userDataTenagaPendidikSd_paginate .paginate_button:hover, 
+#dataTenagaPendidikSdAll_paginate .paginate_button:hover,
+#dataTenagaPendidikSmpAll_paginate .paginate_button:hover
+{
+    color: var(--grey) !important;
+    background: none;
+}
+
 /* End main style */
 
 /* *********************************** */
@@ -253,6 +276,13 @@ h1, h2, h3, h4, h5, h6 {
     border-color: white !important;
 }
 /* End navbar */
+
+/* Carousel section */
+.carousel__section img {
+    object-fit: cover;
+    max-height: 500px;
+}
+/* End carousel section */
 
 /* Info section */
 .info__section h4 {
@@ -325,6 +355,20 @@ h1, h2, h3, h4, h5, h6 {
 .organisasi__section i {
     transition: var(--main-trans);
 }
+.organisasi__content .content svg {
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    font-size: 16px;
+    -webkit-transform:rotate(0deg);
+    transform:rotate(0deg);
+    
+}
+.organisasi__content.down .content svg {
+    -moz-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    transform:rotate(180deg);
+}
 /* End struktur organisasi */
 
 /* *********************************** */
@@ -361,6 +405,9 @@ h1, h2, h3, h4, h5, h6 {
 /* End ajax tab */
 
 /* Tabel */
+#userDataSekolahSd_length select, #userDataSekolahSd_length select  {
+    margin: 0 8px;
+}
 .tabel__section {
     border: 1px solid #6c757d;
 }
@@ -369,10 +416,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 .tabel__section th, td {
     font-size: 16px;
-    color: var(--grey);
+    color: black;
 }
 .tabel__section .jabatan {
     padding-right: 20rem;
+}
+.tabel__section th {
+    width: unset !important;
+}
+.tabel__section .nomor {
+    width: 0px !important; 
+}
+.tabel__section .akreditasi {
+    width: 80px !important;
+}
+.tabel__section td {
+    padding: 10px 18px !important;
 }
 /* End Tabel */
 
@@ -383,27 +442,94 @@ h1, h2, h3, h4, h5, h6 {
 /* *********************************** */
 /*           DETAIL SEKOLAH            */
 /* *********************************** */
+.detail__header path {
+    color: var(--dark-blue);
+}
 .detail__section .detail__content {
     border-bottom: 1px solid lightgrey;
+}
+.detail__section .gambar {
+    max-width: 600px;
+    height: 100%;
+}
+.detail__section .gambar img {
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
 }
 .detail__content .col-1 {
     width: 0.333333% !important;
 }
-
+.sarpras__section, .siswa__section {
+    height: 409px;
+}
+.maintenance__content img {
+    width: 100px;
+    height: 100px;
+}
+.lokasi {
+    height: 400px;
+    max-width: 400px;
+}
+#map {
+    height: 100%;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+  }
 /* *********************************** */
 /*             KOTAK SARAN             */
 /* *********************************** */
 .saran__section input {
     font-size: 14px;
 }
+.saran__section input[type=text] {
+    color: lightslategray;
+}
 .saran__section textarea {
     border-radius: 0 !important;
-    min-height: 7rem;
-    color: var(--grey) !important;
+    min-height: 12.5rem;
+    color: lightslategray !important;
 }
 .saran__section .modal__pesan {
     min-height: 5rem;
 }
+.captcha {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 0;
+    padding: 10px 10px;
+    text-decoration: line-through;
+    color: black;
+    background-color: lightblue;
+}
+.input input {
+    padding: 10px 10px;
+    border: 1px solid #ced4da;
+}
+.input input[type=text] {
+    color: lightslategray;
+}
+.input input:focus {
+    outline: none !important;
+    /* border: none !important; */
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+.captcha__content {
+    width: 40%;
+}
+.restart a {
+    text-decoration: none;
+} 
+.errmsg {
+    color: red;
+    font-size: 14px;
+    transition: 0.5s ease;
+}
+
 
 /* Responsive */
 /* Lg */
@@ -426,14 +552,26 @@ h1, h2, h3, h4, h5, h6 {
     .navbar .navbar-brand h4 {
         display: inline;
     }
+    .data__sekolah__section {
+        margin-top: 40px;
+    }
+    .data__sekolah__section .content h1 {
+        font-size: 32px !important;
+    }
     .data__sekolah__section .content h2 {
-        font-size: 24px;
+        font-size: 24px !important;
     }
     .footer__section h4 {
-        font-size: 16px;
+        font-size: 16px !important;
     }
     .info__section h4, a {
-        font-size: 16px;
+        font-size: 16px !important;
+    }
+    .copyright h5 {
+        font-size: 14px !important;
+    }
+    footer {
+        margin-top: 40px;
     }
 }
 /* End responsive */
